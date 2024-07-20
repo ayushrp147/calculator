@@ -112,7 +112,12 @@ function checkKeyPressed(e){
 const dot=document.querySelector(".dot");
 dot.addEventListener("click",() =>{
     let text=display.textContent;
+    if(text.split("").includes(".")){
+        removeEventListener("click");
+    }
+    else{
     text+=".";
     display.textContent=text;
     console.log(text);
+    }
 });
